@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { theme } from "../constants/theme";
 import { Categories, Products, ProductDetail } from '../screens/index';
 
 const Stack = createNativeStackNavigator();
@@ -8,7 +9,17 @@ const ShopNavigator = () => {
         <Stack.Navigator 
             initialRouteName="Categories"
             screenOptions={{
-                presentation: 'transparentModal',
+                headerTintColor: theme.colors.primaryDark,
+                headerTitleStyle: {
+                    fontFamily: 'Poppins-SemiBold',
+                    fontSize: 17,
+                    color: theme.colors.backgroundDark,
+                },
+                headerShadowVisible: {
+                    borderBottomWidth: 1,
+                    elevation: 20,
+                    shadowOpacity: 0.25,
+                }
             }}
         > 
             <Stack.Screen 
