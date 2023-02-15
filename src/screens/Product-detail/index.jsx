@@ -1,11 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import { styles } from "./styles";
 
-const ProductDetail = () => {
+const ProductDetail = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Produc tDetail</Text>
+            <Text style={styles.text}>Product Detail</Text>
+            <Button
+                title="Go back to Categories"
+                onPress={() => navigation.navigate("Categories")}
+                color="grey"
+            />
         </View>
     );
 };
