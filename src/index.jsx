@@ -3,7 +3,7 @@ import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
 import { styles } from './styles';
-import { theme } from './constants/theme';
+import { THEME } from './constants/theme';
 
 import AppNavigator from './navigation';
 
@@ -24,7 +24,7 @@ const App = () => {
   if(!loaded) {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" color={theme.colors.backgroundDark}/>
+        <ActivityIndicator size="large" color={THEME.colors.backgroundDark}/>
       </View>
     )
   }
