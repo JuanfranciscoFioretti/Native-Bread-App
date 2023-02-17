@@ -5,8 +5,6 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: THEME.colors.backgroundLight,
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     text: {
         fontFamily: 'Poppins-BoldItalic',
@@ -14,4 +12,7 @@ export const styles = StyleSheet.create({
         color: THEME.colors.textDark,
         paddingVertical: 15,
     },
+    contentList: {
+        flex: 1,
+    }
 });

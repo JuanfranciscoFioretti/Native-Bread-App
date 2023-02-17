@@ -26,25 +26,23 @@ const ShopNavigator = () => {
                 name='Categories' 
                 component={Categories}
                 options={{
-                    headerShown: true,
+                    headerShown: false,
                     title: 'Categories',
                 }}
                 />
             <Stack.Screen 
                 name='Products' 
                 component={Products}
-                options={{
-                    headerShown: true,
-                    title: 'Products',
-                }}
+                options={({ route }) => ({
+                    title: route.params.title,
+                })}
                 />
             <Stack.Screen 
                 name='ProductDetail' 
                 component={ProductDetail}
-                options={{
-                    headerShown: true,
-                    title: 'Product Detail',
-                }}
+                options={({ route }) => ({
+                    title: route.params.title,
+                })}
                 />
         </Stack.Navigator>
     );

@@ -8,10 +8,29 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    text: {
+    title: {
         fontFamily: 'Poppins-BoldItalic',
-        fontSize: 20,
+        fontSize: 19,
         color: THEME.colors.textDark,
         paddingVertical: 15,
+    },
+    description: {
+        fontFamily: 'Poppins-Italic',
+        fontSize: 17,
+        paddingVertical: 8,
+    },
+    weight: {
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 15,
+        paddingVertical: 8,
+    },
+    price: {
+        fontFamily: 'Poppins-SemiBold',
+        fontSize: 15,
+        paddingVertical: 8,
+    },
+    buttonContainer: {
+        flex: 1,
+        flexGrow: 'row'
     },
 });
