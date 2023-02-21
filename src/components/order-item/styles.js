@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
     },
     total: {
         fontSize: 17,
-        fontFamily: 'SemiBold',
+        fontFamily: 'Poppins-SemiBold',
         color: THEME.colors.black,
     },
 });

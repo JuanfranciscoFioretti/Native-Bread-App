@@ -5,7 +5,7 @@ import { styles } from "./styles";
 import { THEME } from "../../constants/theme";
 
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { formatDate } from "../../utils/functions";
+import { formatDate } from "../../utils/index";
 
 
 const OrderItem = ({ item, onDelete }) => {
@@ -24,6 +24,6 @@ const OrderItem = ({ item, onDelete }) => {
             </View>
         </View>
     )
-}
+} 
 
 export default OrderItem;

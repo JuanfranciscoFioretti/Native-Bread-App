@@ -1,11 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import { View, ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
+
 import { styles } from './styles';
 import { THEME } from './constants/theme';
 
 import AppNavigator from './navigation';
+import store from './store'
 
 
 const App = () => {
@@ -29,7 +32,9 @@ const App = () => {
     )
   }
   return (
-    <AppNavigator/>
+    <Provider store={store}>
+      <AppNavigator/>
+    </Provider>
   )
 }
 

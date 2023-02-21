@@ -1,27 +1,38 @@
 import React from "react";
-import { View, Text, Button, FlatList, SafeAreaView } from "react-native";
 
-import { THEME } from "../../constants/theme";
-import { CATEGORIES } from "../../constants/data/index"
+// eslint-disable-next-line import/namespace
+import { FlatList, SafeAreaView } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+
 import { styles } from "./styles";
-
-import { CategoryItem } from '../../components' 
+import { CategoryItem } from "../../components";
+import { selectCategory } from "../../store/actions";
 
 const Categories = ({ navigation }) => {
+  
+  const dispatch = useDispatch();
+
+  const categories = useSelector((state) => state.category.categories);
 
   const onSelected = (item) => {
-    navigation.navigate('Products', {
-      categoryID: item.id,
+    dispatch(selectCategory(item.id));
+    navigation.navigate("Products", {
       title: item.title,
-    })
+    });
   };
-  const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} style={styles.categoryItem}/>;
+  const renderItem = ({ item }) => (
+    <CategoryItem
+      item={item}
+      onSelected={onSelected}
+      style={styles.categoryItem}
+    />
+  );
   const keyExtractor = (item) => item.id.toString();
 
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={CATEGORIES}
+        data={categories}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         style={styles.containerList}
