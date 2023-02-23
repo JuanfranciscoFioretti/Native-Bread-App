@@ -1,5 +1,9 @@
 import { PRODUCTS } from '../../constants/data/index';
 
+import { productTypes } from '../types';
+
+const { FILTER_PRODUCTS, SELECT_PRODUCT } = productTypes;
+
 const initialState = {
     products: PRODUCTS,
     filteredProducts: [],
@@ -7,7 +11,25 @@ const initialState = {
 }
 
 const productReducer = (state = initialState, action) => {
-    return state;
+    switch(action.type) {
+        case SELECT_PRODUCT: {
+            return {
+                ...state,
+                selected: state.products.find((product) => product.id === action.productId),
+            }
+        }
+        case FILTER_PRODUCTS: {
+            return {
+                ...state,
+                filteredProducts: state.products.filter(
+                    (product) => product.categoryID === action.categoryID
+                )
+            }
+        }
+
+        default:
+            return state;
+    }
 } 
 
 export default productReducer;

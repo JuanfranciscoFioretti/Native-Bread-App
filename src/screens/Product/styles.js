@@ -1,3 +1,5 @@
+/* eslint-disable import/namespace */
+// eslint-disable-next-line import/order
 import { StyleSheet } from "react-native";
 import { THEME } from "../../constants/theme";
 

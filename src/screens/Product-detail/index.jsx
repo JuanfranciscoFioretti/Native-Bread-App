@@ -1,16 +1,20 @@
 import React from "react";
 
+// eslint-disable-next-line import/namespace
 import { View, Text, Button } from "react-native";
 import { THEME } from "../../constants/theme";
 import { PRODUCTS } from '../../constants/data';
+
+import { useSelector } from "react-redux";
 
 import { styles } from "./styles";
 
 const ProductDetail = ({ navigation, route }) => {
 
+    const product = useSelector((state) => state.product.selected);
+
     const { productID, title } = route.params;
 
-    const product = PRODUCTS.find((product) => product.id === productID);
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{product.title}</Text>
