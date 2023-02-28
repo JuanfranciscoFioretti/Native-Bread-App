@@ -27,7 +27,7 @@ const ShopNavigator = () => {
                 component={Categories}
                 options={{
                     headerShown: false,
-                    title: 'Categories',
+                    // title: 'Categories',
                 }}
                 />
             <Stack.Screen 

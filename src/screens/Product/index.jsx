@@ -17,7 +17,7 @@ const Products = ({ navigation, route }) => {
 
   const category = useSelector((state) => state.category.selected);
 
-  const filteredProducts = useSelector((state) => state.products.filteredProduct);
+  const filteredProducts = useSelector((state) => state.products.filteredProducts);
 
   const onSelected = (item) => {
 

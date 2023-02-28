@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useSelector } from "react-redux";
 
 import CartNavigator from "./cart";
 import ShopNavigator from "./shop";
@@ -12,6 +13,8 @@ import { Octicons } from '@expo/vector-icons';
 const BottomTab = createBottomTabNavigator();
 
 const Tabs = () => {
+
+    const cart = useSelector((state) => state.cart.items);
     return (
         <BottomTab.Navigator 
             initialRouteName="ShopTab"
@@ -62,7 +65,13 @@ const Tabs = () => {
                             size={22}
                             color={THEME.colors.primary}
                         />
-                    )
+                    ),
+                    tabBarBadge: cart.length,
+                    tabBarBadgeStyle: {
+                        backgroundColor: THEME.colors.primaryDark,
+                        color: THEME.colors.textLight,
+                        fontFamily: 'Poppins-Italic',
+                    },
                 }}
             />
         </BottomTab.Navigator>

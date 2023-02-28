@@ -1,1 +1,1 @@
-export const REALTIME_DATABASE_URL = 'https://native-bread-app-default-rtdb.firebaseio.com/'
+export const REALTIME_DATABASE_URL = 'https://native-bread-app-default-rtdb.firebaseio.com/:';

@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
         paddingVertical: 8,
     },
     buttonContainer: {
-        flex: 1,
-        flexGrow: 'row'
+
     },
 });

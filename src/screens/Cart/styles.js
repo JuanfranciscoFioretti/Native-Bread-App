@@ -48,4 +48,15 @@ export const styles = StyleSheet.create({
         fontFamily: 'Poppins-ExtraBold',
         fontSize: 17,
     },
+    headerContainer: {
+        flex: 1,
+        marginVertical: 20,
+        marginHorizontal: 20, 
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    headerTitle: {
+        fontFamily: 'Poppins-ExtraBold',
+        fontSize: 18,
+    },
 });
