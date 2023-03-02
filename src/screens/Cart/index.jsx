@@ -1,13 +1,12 @@
+/* eslint-disable import/namespace */
+/* eslint-disable prettier/prettier */
 import React from "react";
-
-import { useSelector, useDispatch } from "react-redux";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
-
-import { confirmOrder, removeFromCart } from '../../store/actions/index';
-import CartItem from "../../components/cart-item";
+import { useSelector, useDispatch } from "react-redux";
 
 import { styles } from "./styles";
-
+import CartItem from "../../components/cart-item";
+import { confirmOrder, removeFromCart } from "../../store/actions/index";
 
 const Cart = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -16,24 +15,25 @@ const Cart = ({ navigation }) => {
   const total = useSelector((state) => state.cart.total);
 
   const createOrder = () => {
-    dispatch(confirmOrder(cart, total))
+    dispatch(confirmOrder(cart, total));
   };
   const onDelete = (id) => {
     dispatch(removeFromCart(id));
   };
 
-  const renderItem = ({ item }) => (<CartItem item={item} onDelete={onDelete}/>);
+  const renderItem = ({ item }) => <CartItem item={item} onDelete={onDelete} />;
   const keyExtractor = (item) => item.id.toString();
 
-  const Header = () => cart.length === 0 && (
-    <View style={styles.headerContainer}>
+  const Header = () =>
+    cart.length === 0 && (
+      <View style={styles.headerContainer}>
         <Text style={styles.headerTitle}>Cart is empty</Text>
-    </View>
-  );
+      </View>
+    );
 
-  const Footer = () => 
-  cart.length > 0 && (
-    <View style={styles.footer}>
+  const Footer = () =>
+    cart.length > 0 && (
+      <View style={styles.footer}>
         <TouchableOpacity style={styles.buttonConfirm} onPress={createOrder}>
           <Text style={styles.buttonConfirmText}>Confirm</Text>
           <View style={styles.totalContainer}>
@@ -42,10 +42,10 @@ const Cart = ({ navigation }) => {
           </View>
         </TouchableOpacity>
       </View>
-  )
+    );
   return (
     <View style={styles.container}>
-    <Header/>
+      <Header />
       <View style={styles.listContainer}>
         <FlatList
           data={cart}
@@ -54,7 +54,7 @@ const Cart = ({ navigation }) => {
           style={styles.listContainer}
         />
       </View>
-      <Footer/>
+      <Footer />
     </View>
   );
 };

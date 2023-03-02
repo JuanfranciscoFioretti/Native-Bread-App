@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { guessTotal } from "../../utils/functions";
 import { cartTypes } from "../types";
 
@@ -28,7 +29,7 @@ const cartReducer = (state = initialState, action) => {
             };
         case REMOVE_FROM_CART:
             const filteredCart = state.items.filter(
-                (item) = item.id !== action.id);
+                (item) => item.id !== action.id);
             return {
                 ...state,
                 items: filteredCart,

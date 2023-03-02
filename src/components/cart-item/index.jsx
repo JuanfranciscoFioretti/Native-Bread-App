@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable import/namespace */
+/* eslint-disable import/order */
 import React from "react";
 
 import { View, Text, TouchableOpacity } from "react-native";
@@ -18,8 +21,7 @@ const CartItem = ({ item, onDelete }) => {
                     <Text style={styles.price}>Price:   ${item.price}</Text>
                 </View>
             <TouchableOpacity 
-                // onPress={(item) => onDelete(item.id)}
-                onPress={item => onDelete(item.id)}
+                onPress={(id) => onDelete(item.id)}
                 style={styles.deleteButton}>
                 <Ionicons name='trash' size={22} color={THEME.colors. textDark}/>
             </TouchableOpacity>

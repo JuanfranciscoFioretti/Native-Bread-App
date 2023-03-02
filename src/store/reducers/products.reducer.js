@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { PRODUCTS } from '../../constants/data/index';
 
 import { productTypes } from '../types';

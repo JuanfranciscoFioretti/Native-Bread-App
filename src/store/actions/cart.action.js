@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
 import { cartTypes } from "../types";
 
 const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = cartTypes;
@@ -15,8 +17,7 @@ export const removeFromCart = (id) => ({
 export const confirmOrder = (items, total) => {
     return async (dispatch) => {
         try {
-            // eslint-disable-next-line no-undef
-            const response = await fetch(`${REALTIME_DATABASE_URL}/orders.json`, {
+            const response = await fetch(`https://native-bread-app-default-rtdb.firebaseio.com/orders.json`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
