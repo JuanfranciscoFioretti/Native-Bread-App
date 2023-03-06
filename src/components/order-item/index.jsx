@@ -1,3 +1,5 @@
+/* eslint-disable import/namespace */
+/* eslint-disable import/order */
 import React from "react";
 
 import { View, Text, TouchableOpacity } from "react-native";

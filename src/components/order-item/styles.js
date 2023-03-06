@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable import/order */
+/* eslint-disable import/namespace */
 import { StyleSheet } from "react-native";
 import { THEME } from "../../constants/theme";
 
@@ -22,9 +25,8 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 20,
     },
-    headerContainer: {
-
-    },
+    // headerContainer: {
+    // },
     date: {
         fontSize: 14,
         fontFamily: 'Poppins-Medium',

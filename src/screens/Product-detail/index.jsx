@@ -22,10 +22,10 @@ const ProductDetail = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
-            {/* <Text style={styles.title}>{product.title}</Text> */}
-            <Text style={styles.description}>{product.description}</Text>
-            <Text style={styles.weight}>{product.weight}</Text>
-            <Text style={styles.price}>${product.price}</Text>
+            <Text style={styles.title}>{product?.title}</Text>
+            <Text style={styles.description}>{product?.description}</Text>
+            <Text style={styles.weight}>{product?.weight}</Text>
+            <Text style={styles.price}>${product?.price}</Text>
             <View style={styles.buttonContainer}>
                 <Button
                     title="Add to Cart"
