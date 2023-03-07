@@ -1,20 +1,34 @@
+/* eslint-disable import/namespace */
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 
 import { View, TextInput, Button, TouchableOpacity, Text, KeyboardAvoidingView, Platform } from "react-native";
+import { useDispatch } from "react-redux";
 
 import { THEME } from "../../constants/theme";
+import { signIn, signUp } from "../../store/actions";
 
 import { styles } from "./styles";
 
 const Auth = ({ navigaton }) => {
+
+    const dispatch = useDispatch();
     
     const [ isLogin, setIsLogin] = useState(true);
+
+    const [ email, setEmail ] = useState('');
+
+    const [ password, setPassword ] = useState('');
 
     const title = isLogin ? 'Login' : 'Register';
 
     const message = isLogin ? 'Don\'t have an account?' : 'Already have an account?';
 
     const messageButton = isLogin ? 'Login' : 'Register';
+
+    const handlerSubmit = () => {
+        dispatch( isLogin ? signIn(email, password) : signUp(email, password));
+    }
 
     return (
         <KeyboardAvoidingView
@@ -32,7 +46,8 @@ const Auth = ({ navigaton }) => {
                     placeholderTextColor={THEME.colors.gray}
                     autoCapitalize='none'
                     autoCorrect={false}
-                    onChangeText={() => {}}
+                    onChangeText={(text) => setEmail(text)}
+                    value={email}
                     />
 
                     <Text style={styles.label}>Password</Text>
@@ -43,13 +58,14 @@ const Auth = ({ navigaton }) => {
                     secureTextEntry
                     autoCapitalize='none'
                     autoCorrect={false}
-                    onChangeText={() => {}}
+                    onChangeText={(text) => setPassword(text)}
+                    value={password}
                     />
                     <View style={styles.buttonContainer}>
                         <Button
                             title={messageButton}
                             color={THEME.colors.primary}
-                            onPress={() => {}}
+                            onPress={handlerSubmit}
                         />
 
                         <View style={styles.prompt}>
