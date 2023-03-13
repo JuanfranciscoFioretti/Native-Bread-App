@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import { View, TextInput, Button, TouchableOpacity, Text, KeyboardAvoidingView, Platform } from "react-native";
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
 import { THEME } from "../../constants/theme";
 import { signIn, signUp } from "../../store/actions";

@@ -8,8 +8,9 @@ export const getOrders = () => {
     return async (dispatch) => {
         try {
             dispatch({
-                type: GET_ORDERS,
+                type: "GET_ORDERS",
             });
+
             const response = await fetch("https://native-bread-app-default-rtdb.firebaseio.com/orders.json", {
                 method: 'GET',
                 headers: {
@@ -24,12 +25,12 @@ export const getOrders = () => {
                 id: key,
             }));
             dispatch({
-                type: GET_ORDERS_SUCCESS,
+                type: "GET_ORDERS_SUCCESS",
                 orders,
             });
         } catch (error) {
             dispatch({
-                type: GET_ORDERS_FAILURE,
+                type: "GET_ORDERS_FAILURE",
                 error,
             });
         }
@@ -49,12 +50,12 @@ export const deleteOrder = (id) => {
             const result = await response.json();
 
             dispatch({
-                type: DELETE_ORDER,
+                type: "DELETE_ORDER",
                 id,
             });
         } catch (error) {
             dispatch({
-                type: DELETE_ORDER,
+                type: "DELETE_ORDER",
                 error,
             });
         }
