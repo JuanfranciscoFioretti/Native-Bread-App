@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     content: {
         width: '80%',
         maxWidth: 400,
+        minHeight: 330,
         padding: 15,
         margin: 15,
         borderColor: THEME.colors.primaryDark,
@@ -30,15 +31,15 @@ export const styles = StyleSheet.create({
         fontFamily: 'Poppins-Regular',
         paddingVertical: 5,
     },
-    input: {
-        height: 45,
-        borderBottomColor: THEME.colors.primaryDark,
-        borderBottomWidth: 1,
-        width: '100%',
-        fontFamily: 'Poppins-Light',
-        paddingVertical: 5,
-        marginBottom: 7,
-    },
+    // input: {
+    //     height: 45,
+    //     borderBottomColor: THEME.colors.primaryDark,
+    //     borderBottomWidth: 1,
+    //     width: '100%',
+    //     fontFamily: 'Poppins-Light',
+    //     paddingVertical: 5,
+    //     marginBottom: 7,
+    // },
     buttonContainer: {
         marginVertical: 10,
     },
